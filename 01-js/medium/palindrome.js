@@ -4,6 +4,22 @@
 */
 
 function isPalindrome(str) {
+  str = str.toLowerCase();
+  let newStr = "";
+  
+  for(let ch of str) {
+    if(ch >= 'a' && ch <= 'z') 
+    newStr += ch;
+  }
+
+  let i=0, j=newStr.length-1;
+  while(i<j) {
+    if(newStr[i] != newStr[j])
+      return false;
+    i++;
+    j--;
+  }
+
   return true;
 }
 

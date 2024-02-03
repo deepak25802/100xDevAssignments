@@ -9,5 +9,14 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    const initialDate = new Date();
+    let sum = 1;
+
+    for(let i=0; i<n; i++)
+        sum += i;
+
+    const finalDate = new Date();
+    console.log(finalDate - initialDate);
 }
+
+calculateTime(1000000000);
