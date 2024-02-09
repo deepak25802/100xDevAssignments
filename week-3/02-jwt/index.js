@@ -81,9 +81,9 @@ function isJWT(jwt) {
 
 function decodeJwt(token) {
     // Your code here
-    if(!isJWT(token))
-        return false;
-    return true;
+    const decoded = jwt.decode(token);
+
+    return decoded !== null;
 }
 
 
