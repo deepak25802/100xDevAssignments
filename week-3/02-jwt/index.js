@@ -58,27 +58,6 @@ function verifyJwt(token) {
  *                         Returns false if the token is not a valid JWT format.
  */
 
-function isJWT(jwt) {
-    let jwtSplitted = jwt.split('.');
-    if (jwtSplitted.length !== 3)
-        return false;
-    
-    try {
-        let jsonFirstPart = Buffer.from(jwtSplitted[0], 'base64').toString('utf-8');
-        let firstPart = JSON.parse(jsonFirstPart);
-        if (!firstPart.hasOwnProperty('alg'))
-            return false;
-        let jsonSecondPart = Buffer.from(jwtSplitted[1], 'base64').toString('utf-8');
-        let secondPart = JSON.parse(jsonSecondPart);
-        
-        
-    } catch (err) {
-        return false;
-    }
-    
-    return true;
-}
-
 function decodeJwt(token) {
     // Your code here
     const decoded = jwt.decode(token);
