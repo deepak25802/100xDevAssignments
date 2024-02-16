@@ -12,7 +12,12 @@ export const Assignment3 = () => {
     ]);
 
     // Your code starts here
-    const totalValue = 0;
+    const totalValue = useMemo(() => {
+        const ans = items.reduce((accumulator, currentValue) => {
+            return parseInt(accumulator + currentValue.value);
+        }, 0);
+        return ans;
+    }, [items]);
     // Your code ends here
     return (
         <div>
